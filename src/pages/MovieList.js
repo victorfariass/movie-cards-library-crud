@@ -25,9 +25,13 @@ class MovieList extends Component {
     if (!movies.length) return <Loading />;
 
     return (
-      <div data-testid="movie-list" className="movie-list">
-        {movies.map((movie) => <MovieCard key={ movie.title } movie={ movie } />)}
-        <Link to="/movie-cards-library-crud/movies/new">ADICIONAR CARTÃO</Link>
+      <div>
+        <div data-testid="movie-list" className="movie-list">
+          {movies.map((movie) => <MovieCard key={ movie.title } movie={ movie } />)}
+        </div>
+        <div className="adicionar-container">
+          <Link to="/movies/new" className="adicionar">ADICIONAR CARTÃO</Link>
+        </div>
       </div>
     );
   }

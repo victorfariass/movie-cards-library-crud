@@ -150,7 +150,8 @@ class MovieForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
+        <h2 className="movie-form-title">Adicione um novo Filme</h2>
+        <form className="movie-form-container">
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
           {this.renderImagePathInput()}

@@ -8,15 +8,17 @@ import {
   NotFound,
 } from './pages';
 import './App.css';
+import { Header } from './components';
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route exact path="/movie-cards-library-crud" component={ MovieList } />
-        <Route path="/movie-cards-library-crud/movies/new" component={ NewMovie } />
-        <Route path="/movie-cards-library-crud/movies/:id/edit" component={ EditMovie } />
-        <Route path="/movie-cards-library-crud/movies/:id" component={ MovieDetails } />
+        <Route path="/movies/new" component={ NewMovie } />
+        <Route path="/movies/:id/edit" component={ EditMovie } />
+        <Route path="/movies/:id" component={ MovieDetails } />
         <Route component={ NotFound } />
       </Switch>
     </BrowserRouter>

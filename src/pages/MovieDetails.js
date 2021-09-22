@@ -32,21 +32,25 @@ class MovieDetails extends Component {
     if (!movie) return <Loading />;
 
     return (
-      <div data-testid="movie-details">
+      <div data-testid="movie-details" className="movie-details-container">
         <img alt="Movie Cover" src={ `../${imagePath}` } />
-        <p>{ `Title: ${title}`}</p>
-        <p>{ `Subtitle: ${subtitle}` }</p>
-        <p>{ `Storyline: ${storyline}` }</p>
-        <p>{ `Genre: ${genre}` }</p>
-        <p>{ `Rating: ${rating}` }</p>
-        <Link to={ `/movie-cards-library-crud/movies/${id}/edit` }>EDITAR</Link>
-        <Link to="/movie-cards-library-crud">VOLTAR</Link>
-        <Link
-          to="/movie-cards-library-crud"
-          onClick={ () => this.handleClick(id) }
-        >
-          DELETAR
-        </Link>
+        <div className="movie-details-details">
+          <p>{ `Title: ${title}`}</p>
+          <p>{ `Subtitle: ${subtitle}` }</p>
+          <p>{ `Storyline: ${storyline}` }</p>
+          <p>{ `Genre: ${genre}` }</p>
+          <p>{ `Rating: ${rating}` }</p>
+        </div>
+        <div className="movie-details-buttons">
+          <Link to={ `/movies/${id}/edit` }>EDITAR</Link>
+          <Link to="/movie-cards-library-crud">VOLTAR</Link>
+          <Link
+            to="/movie-cards-library-crud"
+            onClick={ () => this.handleClick(id) }
+          >
+            DELETAR
+          </Link>
+        </div>
       </div>
     );
   }
