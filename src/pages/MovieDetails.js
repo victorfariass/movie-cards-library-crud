@@ -25,6 +25,7 @@ class MovieDetails extends Component {
     await movieAPI.deleteMovie(deleteMovie);
   }
 
+  // eslint-disable-next-line max-lines-per-function
   render() {
     const { movie } = this.state;
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
@@ -38,9 +39,14 @@ class MovieDetails extends Component {
         <p>{ `Storyline: ${storyline}` }</p>
         <p>{ `Genre: ${genre}` }</p>
         <p>{ `Rating: ${rating}` }</p>
-        <Link to={ `/movies/${id}/edit` }>EDITAR</Link>
-        <Link to="/">VOLTAR</Link>
-        <Link to="/" onClick={ () => this.handleClick(id) }>DELETAR</Link>
+        <Link to={ `/movie-cards-library-crud/movies/${id}/edit` }>EDITAR</Link>
+        <Link to="/movie-cards-library-crud">VOLTAR</Link>
+        <Link
+          to="/movie-cards-library-crud"
+          onClick={ () => this.handleClick(id) }
+        >
+          DELETAR
+        </Link>
       </div>
     );
   }
