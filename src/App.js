@@ -9,15 +9,26 @@ import {
 } from './pages';
 import './App.css';
 
+// eslint-disable-next-line max-lines-per-function
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/movies/new" component={ NewMovie } />
-        <Route path="/movies/:id/edit" component={ EditMovie } />
-        <Route exact path="/" component={ MovieList } />
-        <Route path="/movies/:id" component={ MovieDetails } />
-        <Route component={ NotFound } />
+        <Route exact path="/">
+          <MovieList />
+        </Route>
+        <Route path="/movies/new">
+          <NewMovie />
+        </Route>
+        <Route path="/movies/:id/edit">
+          <EditMovie />
+        </Route>
+        <Route path="/movies/:id">
+          <MovieDetails />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
